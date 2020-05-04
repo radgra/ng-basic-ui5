@@ -6,13 +6,26 @@
     <ui5-button icon="nav-back" slot="startButton" [routerLink]="['../']"></ui5-button>
     </ui5-shellbar>
     <!-- <ng-container *ngIf="employees$ | async as employees"> -->
-        <ui5-tabcontainer class="full-width" collapsed>
-            <ui5-tab text="Home"></ui5-tab>
-            <ui5-tab text="What's new"></ui5-tab>
-            <ui5-tab text="Who are we" selected>
-                <ui5-label>Explicabo laboriosam ab consequuntur</ui5-label>
+        <ui5-tabcontainer class="full-width" collapsed fixed (tabSelect)="onTabSelected($event)">
+            <ui5-tab text="Home" [selected]="selectedTab === 'Home'"></ui5-tab>
+            <ui5-tab text="What's new" [selected]="selectedTab === 'New'"></ui5-tab>
+            <ui5-tab text="Who are we" [selected]="selectedTab === 'We'">
             </ui5-tab>
-            <ui5-tab text="About"></ui5-tab>
+            <ui5-tab text="About" [selected]="selectedTab === 'About'"></ui5-tab>
         </ui5-tabcontainer>
+        <div class="content-container">
+            <ng-container *ngIf="selectedTab==='Home'">
+                <ui5-label>Welcome Home</ui5-label>
+            </ng-container>
+            <ng-container *ngIf="selectedTab==='New'">
+                <ui5-label>What's new</ui5-label>
+            </ng-container>
+            <ng-container *ngIf="selectedTab==='We'">
+                <ui5-label>Who are we</ui5-label>
+            </ng-container>
+            <ng-container *ngIf="selectedTab==='About'">
+                <ui5-label>About</ui5-label>
+            </ng-container>
+        </div>
     <!-- </ng-container> -->
 </div>
