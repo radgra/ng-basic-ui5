@@ -1,2 +1,17 @@
-<p>master-page works!</p>
-<ui5-button>Hello world!</ui5-button>
+<div class="container">
+    <ui5-shellbar primary-title="Employee List" 
+    logo="assets/sap-logo-svg.svg"
+    show-co-pilot
+    >
+        <!-- <ui5-button icon="nav-back" slot="startButton"></ui5-button> -->
+        <!-- <ui5-avatar slot="profile" icon="customer"></ui5-avatar> -->
+    </ui5-shellbar>
+    <ng-container *ngIf="employees$ | async as employees">
+        <ui5-list id="myList5" mode="None" header-text="List of Employees" >
+            <ui5-li icon="navigation-right-arrow" icon-end *ngFor="let employee of employees" 
+            [routerLink]="['/','employees', employee.EmployeeID]">
+                {{employee.FirstName}} {{employee.LastName}}
+            </ui5-li>
+        </ui5-list>
+    </ng-container>
+</div>
