@@ -1,10 +1,4 @@
-<div class="container">
-    <ui5-shellbar primary-title="Employee Detail" 
-    logo="assets/sap-logo-svg.svg"
-    show-co-pilot
-    >
-        <ui5-button icon="nav-back" slot="startButton" [routerLink]="['']"></ui5-button>
-    </ui5-shellbar>
+<app-main-layout [navLink]="['']" title="Employee Detail">
     <ng-container *ngIf="employee$ | async as employee">
         <div class="content-container">
             <div class="header">
@@ -42,8 +36,7 @@
                     <span class="key">Country:</span>
                     <span class="value">{{employee.Country}}</span>
                 </div>
-
             </div>
         </div>
     </ng-container>
-</div>
+</app-main-layout>

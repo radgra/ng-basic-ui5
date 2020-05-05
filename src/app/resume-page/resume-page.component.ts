@@ -12,6 +12,7 @@ export class ResumePageComponent implements OnInit {
     2:'We',
     3:'About',
   }
+  someText = "trex"
   selectedTab:string = 'New'
   constructor() { }
 

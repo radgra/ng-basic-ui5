@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { MasterPageComponent } from './master-page/master-page.component';
 import { DetailPageComponent } from './detail-page/detail-page.component';
 import { ResumePageComponent } from './resume-page/resume-page.component';
+import { MainLayoutComponent } from './main-layout/main-layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MasterPageComponent,
     DetailPageComponent,
-    ResumePageComponent
+    ResumePageComponent,
+    MainLayoutComponent
   ],
   imports: [
     BrowserModule,

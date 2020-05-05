@@ -1,0 +1,6 @@
+<div class="container">
+    <ui5-shellbar [primaryTitle]="title" logo="assets/sap-logo-svg.svg" show-co-pilot>
+        <ui5-button icon="nav-back" slot="startButton" [routerLink]="navLink" *ngIf="navLink"></ui5-button>
+    </ui5-shellbar>
+    <ng-content></ng-content>
+</div>
