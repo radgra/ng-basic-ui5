@@ -6,18 +6,20 @@
         </ui5-tab>
         <ui5-tab text="About" [selected]="selectedTab === 'About'"></ui5-tab>
     </ui5-tabcontainer>
-    <div class="content-container">
-        <ng-container *ngIf="selectedTab==='Home'">
-            <ui5-label>Welcome Home</ui5-label>
-        </ng-container>
-        <ng-container *ngIf="selectedTab==='New'">
-            <ui5-label>What's new</ui5-label>
-        </ng-container>
-        <ng-container *ngIf="selectedTab==='We'">
-            <ui5-label>Who are we</ui5-label>
-        </ng-container>
-        <ng-container *ngIf="selectedTab==='About'">
-            <ui5-label>About</ui5-label>
-        </ng-container>
-    </div>
+    <ng-container *ngIf="selectedTab$ | async as selectedTab">
+        <div class="content-container">
+            <ng-container *ngIf="selectedTab==='Home'">
+                <ui5-label>Welcome Home</ui5-label>
+            </ng-container>
+            <ng-container *ngIf="selectedTab==='New'">
+                <ui5-label>What's new</ui5-label>
+            </ng-container>
+            <ng-container *ngIf="selectedTab==='We'">
+                <ui5-label>Who are we</ui5-label>
+            </ng-container>
+            <ng-container *ngIf="selectedTab==='About'">
+                <ui5-label>About</ui5-label>
+            </ng-container>
+        </div>
+    </ng-container>
 </app-main-layout>
