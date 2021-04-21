@@ -1,12 +1,12 @@
 <app-main-layout title="Resume" [navLink]="['../']">
-    <ui5-tabcontainer class="full-width" collapsed fixed (tabSelect)="onTabSelected($event)">
-        <ui5-tab text="Home" [selected]="(selectedTab$ | async) === 'Home'"></ui5-tab>
-        <ui5-tab text="What's new" [selected]="(selectedTab$ | async) === 'New'"></ui5-tab>
-        <ui5-tab text="Who are we" [selected]="(selectedTab$ | async) === 'We'">
-        </ui5-tab>
-        <ui5-tab text="About" [selected]="(selectedTab$ | asnyc) === 'About'"></ui5-tab>
-    </ui5-tabcontainer>
     <ng-container *ngIf="selectedTab$ | async as selectedTab">
+        <ui5-tabcontainer class="full-width" collapsed fixed (tabSelect)="onTabSelected($event)">
+            <ui5-tab text="Home" [selected]="selectedTab === 'Home'"></ui5-tab>
+            <ui5-tab text="What's new" [selected]="selectedTab === 'New'"></ui5-tab>
+            <ui5-tab text="Who are we" [selected]="selectedTab === 'We'">
+            </ui5-tab>
+            <ui5-tab text="About" [selected]="selectedTab === 'About'"></ui5-tab>
+        </ui5-tabcontainer>
         <div class="content-container">
             <ng-container *ngIf="selectedTab==='Home'">
                 <ui5-label>Welcome Home</ui5-label>

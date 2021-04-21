@@ -1,6 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
+type TTab = 'Home' | 'New' | 'We' | 'About'
+
 @Component({
   selector: 'app-resume-page',
   templateUrl: './resume-page.component.html',
@@ -9,13 +11,13 @@ import { BehaviorSubject } from 'rxjs';
 
 })
 export class ResumePageComponent implements OnInit {
-  private TABS = {
+  private TABS:{[id:number]:TTab} = {
     0:'Home',
     1:'New',
     2:'We',
     3:'About',
   }
-  selectedTab$:BehaviorSubject<string> = new BehaviorSubject(this.TABS[0])
+  selectedTab$:BehaviorSubject<TTab> = new BehaviorSubject(this.TABS[0])
   constructor() { }
 
   ngOnInit() {
