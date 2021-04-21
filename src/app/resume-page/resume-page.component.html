@@ -4,7 +4,7 @@
         <ui5-tab text="What's new" [selected]="(selectedTab$ | async) === 'New'"></ui5-tab>
         <ui5-tab text="Who are we" [selected]="(selectedTab$ | async) === 'We'">
         </ui5-tab>
-        <ui5-tab text="About" [selected]="selectedTab === 'About'"></ui5-tab>
+        <ui5-tab text="About" [selected]="(selectedTab$ | asnyc) === 'About'"></ui5-tab>
     </ui5-tabcontainer>
     <ng-container *ngIf="selectedTab$ | async as selectedTab">
         <div class="content-container">
